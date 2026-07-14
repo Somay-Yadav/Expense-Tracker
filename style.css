@@ -30,7 +30,7 @@ form {
     flex-direction: column;
     gap: 10px;
 }
-
+ 
 input,
 button {
     padding: 12px;
