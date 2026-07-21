@@ -1,19 +1,44 @@
-# 💰 Expense Tracker
+# 💸 Expense Tracker V2
 
-A simple and responsive Expense Tracker built using **HTML**, **CSS**, and **Vanilla JavaScript**. This project helps users record daily expenses, calculate the total amount spent, and manage their expenses through an intuitive interface.
+A modern, responsive **Expense Tracker** built with **HTML**, **CSS**, and **Vanilla JavaScript**. It helps users manage their finances by tracking income and expenses, organizing transactions with categories, monitoring their balance, and switching between dark and light themes—all without any frameworks.
 
-> **Version:** v1.0.0
+> **Version:** v2.0.0
 
 ---
 
 ## ✨ Features
 
-* ➕ Add new expenses
-* 💵 Automatically calculate the total expense
-* 🗑️ Delete individual expenses
-* ✅ Input validation for empty names and invalid amounts
-* 📱 Responsive and clean user interface
-* ⚡ Built with pure JavaScript (no frameworks)
+### 💰 Finance Management
+
+* ➕ Add income and expense transactions
+* 💳 Automatic balance calculation
+* 📈 Separate income and expense summaries
+* 🗑️ Delete transactions instantly
+
+### 🗂️ Transaction Details
+
+* 🏷️ Category selection
+* 📅 Transaction date support
+* 😊 Category icons for better readability
+
+### 🔍 Smart Search
+
+* 🔎 Live search by transaction name
+* ⚡ Instant filtering while typing
+
+### 🎨 User Interface
+
+* 🌙 Dark & Light mode
+* 💎 Modern glassmorphism design
+* 📱 Fully responsive layout
+* ✨ Smooth hover animations
+* 🎯 Clean dashboard interface
+
+### 💾 Data Persistence
+
+* 💽 Local Storage support
+* 🔄 Transactions remain after refreshing the browser
+* 🌗 Theme preference is remembered automatically
 
 ---
 
@@ -21,88 +46,117 @@ A simple and responsive Expense Tracker built using **HTML**, **CSS**, and **Van
 
 * HTML5
 * CSS3
-* JavaScript (ES6)
+* Vanilla JavaScript (ES6)
+* LocalStorage API
+* Font Awesome Icons
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-expense-tracker/
+Expense-Tracker/
 │
 ├── index.html
 ├── style.css
 ├── script.js
-└── README.md
+├── README.md
+└── assets/
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-1. Clone the repository:
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Somay-Yadav/Expense-Tracker.git
 ```
 
-2. Open the project folder.
+### 2. Open the Project
 
-3. Open `index.html` in your browser.
+```text
+Expense-Tracker/
+```
 
-No additional installation or dependencies are required.
+### 3. Launch the Application
+
+Simply open **index.html** in your preferred web browser.
+
+No installation, dependencies, or build tools are required.
 
 ---
 
 ## 📸 Current Functionality
 
-* Add an expense by entering its name and amount.
-* View the running total instantly.
-* Remove an expense using the **Delete** button.
-* The total updates automatically after every addition or deletion.
+Users can:
+
+* Add income and expense transactions
+* Assign categories to each transaction
+* Select transaction dates
+* View total balance, income, and expenses
+* Delete transactions
+* Search transactions instantly
+* Switch between Dark and Light mode
+* Keep all data saved using LocalStorage
 
 ---
 
 ## 📋 Upcoming Features
 
-* 💾 Local Storage support
-* 📅 Expense date
-* 🏷️ Categories
-* 🔍 Search and filter
-* 📊 Expense charts
-* 🌙 Dark mode
+* ✏️ Edit Transactions
+* 📊 Expense Analytics (Chart.js)
+* 📈 Monthly Spending Graph
+* 🏷️ Category Filters
+* 📅 Sort by Date
+* 🔔 Toast Notifications
 * 📄 Export to CSV
-* 📱 Improved mobile responsiveness
+* 📥 Import CSV
+* 💵 Budget Planning
+* 🎯 Savings Goals
+* 📱 Progressive Web App (PWA)
 
 ---
 
-## 🎯 Learning Objectives
+## 🧠 Learning Objectives
 
-This project was built to practice:
+This project was built to strengthen understanding of:
 
 * DOM Manipulation
 * Event Handling
 * Form Validation
-* Dynamic HTML Creation
-* JavaScript Fundamentals
-* CSS Layout and Styling
+* Arrays & Objects
+* ES6 JavaScript
+* LocalStorage
+* Dynamic Rendering
+* Responsive UI Design
+* Theme Switching
+* Search & Filtering
+
+---
+
+## 🌟 Future Vision
+
+The goal is to transform this project into a complete personal finance management application featuring advanced analytics, budgeting tools, charts, and cloud synchronization.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions, suggestions, and improvements are welcome.
+Contributions are welcome!
 
-1. Fork the repository.
-2. Create a new feature branch.
-3. Commit your changes.
-4. Open a Pull Request.
+1. Fork the repository
+2. Create a new feature branch
+3. Commit your changes
+4. Push your branch
+5. Open a Pull Request
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
@@ -110,4 +164,11 @@ This project is licensed under the MIT License.
 
 **Somay Yadav**
 
-If you enjoyed this project, consider giving it a ⭐ on GitHub!
+### Connect with Me
+
+* GitHub: **https://github.com/Somay-Yadav**
+* LinkedIn: **http://www.linkedin.com/in/somay-yadav**
+
+---
+
+⭐ If you found this project helpful, consider giving it a **Star** on GitHub. It helps support the project and motivates future improvements!
