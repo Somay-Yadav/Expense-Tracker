@@ -45,6 +45,169 @@ expenseForm.addEventListener("submit", function (e) {
     expenseForm.reset();
 });
 
+const monthlyChartCanvas = document.getElementById("monthlyChart");
+const categoryChartCanvas = document.getElementById("categoryChart");
+const incomeExpenseChartCanvas = document.getElementById("incomeExpenseChart");
+
+let monthlyChart;
+let categoryChart;
+let incomeExpenseChart;
+
+function updateCharts() {
+
+    createMonthlyChart();
+
+    createCategoryChart();
+
+    createIncomeExpenseChart();
+
+}
+
+function createMonthlyChart(){
+
+    if(monthlyChart){
+        monthlyChart.destroy();
+    }
+
+    const months = [
+        "Jan","Feb","Mar","Apr","May","Jun",
+        "Jul","Aug","Sep","Oct","Nov","Dec"
+    ];
+
+    const totals = new Array(12).fill(0);
+
+    transactions.forEach(transaction=>{
+
+        if(transaction.type==="expense"){
+
+            const month = new Date(transaction.date).getMonth();
+
+            totals[month]+=Number(transaction.amount);
+
+        }
+
+    });
+
+    monthlyChart = new Chart(monthlyChartCanvas,{
+
+        type:"line",
+
+        data:{
+            labels:months,
+
+            datasets:[{
+
+                label:"Expenses",
+
+                data:totals,
+
+                tension:.4,
+
+                fill:true
+
+            }]
+        },
+
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+
+    });
+
+}
+
+function createCategoryChart(){
+
+    if(categoryChart){
+
+        categoryChart.destroy();
+
+    }
+
+    const categories={};
+
+    transactions.forEach(transaction=>{
+
+        if(transaction.type==="expense"){
+
+            categories[transaction.category]=
+                (categories[transaction.category]||0)
+                +Number(transaction.amount);
+
+        }
+
+    });
+
+    categoryChart=new Chart(categoryChartCanvas,{
+
+        type:"pie",
+
+        data:{
+
+            labels:Object.keys(categories),
+
+            datasets:[{
+
+                data:Object.values(categories)
+
+            }]
+
+        },
+
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+}
+
+function createIncomeExpenseChart(){
+
+    if(incomeExpenseChart){
+
+        incomeExpenseChart.destroy();
+
+    }
+
+    let income=0;
+    let expense=0;
+
+    transactions.forEach(transaction=>{
+
+        if(transaction.type==="income")
+            income+=Number(transaction.amount);
+
+        else
+            expense+=Number(transaction.amount);
+
+    });
+
+    incomeExpenseChart=new Chart(incomeExpenseChartCanvas,{
+
+        type:"bar",
+
+        data:{
+
+            labels:["Income","Expense"],
+
+            datasets:[{
+
+                data:[income,expense]
+
+            }]
+
+        },
+
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+}
+
 function renderTransactions(search = "") {
 
     expenseList.innerHTML = "";
@@ -101,6 +264,8 @@ function renderTransactions(search = "") {
     expenseElement.textContent = expense;
 
     balanceElement.textContent = income - expense;
+
+    updateCharts();
 
 }
 
@@ -174,5 +339,20 @@ themeBtn.addEventListener("click", () => {
         '<i class="fa-solid fa-moon"></i>';
 
     }
+
+});
+
+const menuBtn = document.querySelector(".menu-btn");
+const mainNav = document.querySelector(".main-nav");
+
+menuBtn.addEventListener("click", () => {
+
+    mainNav.classList.toggle("active");
+
+    const isOpen = mainNav.classList.contains("active");
+
+    menuBtn.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
 
 });

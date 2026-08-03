@@ -18,15 +18,32 @@
 
 <div class="dashboard">
 
-    <header>
-        <div>
-            <h1>Expense Tracker</h1>
-            <p>Manage your money smarter.</p>
+    <header class="main-header">
+
+        <div class="logo">
+            <span class="logo-icon">₹</span>
+            <span>Expense Tracker</span>
         </div>
 
-        <button class="theme-btn">
-            <i class="fa-solid fa-moon"></i>
-        </button>
+        <nav class="main-nav">
+            <a href="#dashboard" class="active">Dashboard</a>
+            <a href="#transactions">Transactions</a>
+            <a href="#analytics">Analytics</a>
+            <a href="#budget">Budget</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="theme-btn" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button class="menu-btn" aria-label="Open navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
     </header>
 
     <section class="summary">
@@ -44,6 +61,34 @@
         <div class="card expense">
             <p>Total Expense</p>
             <h2>₹<span id="total">0</span></h2>
+        </div>
+
+    </section>
+
+    <section class="analytics">
+
+        <div class="chart-card">
+            <h2>Monthly Spending</h2>
+
+            <div class="chart-container">
+                <canvas id="monthlyChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h2>Expenses by Category</h2>
+
+            <div class="chart-container">
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h2>Income vs Expense</h2>
+            
+            <div class="chart-container">
+                <canvas id="incomeExpenseChart"></canvas>
+            </div>
         </div>
 
     </section>
@@ -123,6 +168,9 @@
 
 </div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/charts.js"></script>
 <script src="script.js"></script>
 
 </body>
