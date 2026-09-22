@@ -524,6 +524,9 @@ select option{
 /* ===========================
    Light Theme
 =========================== */
+body.light-mode .logo-icon{
+    color: black;
+}
 
 body.light-mode{
     background:#f1f5f9;
